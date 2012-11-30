@@ -1,0 +1,46 @@
+<%= form_for(@contact, :remote => true, :class => "form-horizontal") do |f| %>
+    <% if @contact.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+          <ul>
+            <% @contact.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="control-group">
+      <div class="field">
+        <%= f.label :name, :class => "control-label" %>
+        <div class="controls">
+          <%= f.text_field :name %>
+        </div>
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="field">
+        <%= f.label :email, :class => "control-label" %>
+        <div class="controls">
+          <%= f.text_field :email %>
+        </div>
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="field">
+        <%= f.label :body, "Describe Your Project", :class => "control-label" %>
+        <div class="controls">
+          <%= f.text_area :body, :rows => 20 %>
+        </div>
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="actions">
+        <div class="controls">
+          <%= f.submit "Send", :id => 'send' %>
+          <%=  image_tag "spinner.gif", :class => "spinner hidden" %>
+        </div>
+      </div>
+    </div>
+<% end %>

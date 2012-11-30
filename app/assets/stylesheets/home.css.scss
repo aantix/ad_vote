@@ -1,0 +1,214 @@
+@import "compass/css3/opacity";
+@import "compass/css3/border-radius";
+
+#home_index {
+  .section {
+
+    h1 {
+      padding: 25px;
+    }
+
+    .title {
+      font-weight: bold;
+    }
+
+    .description {
+      background: black;
+      color: #ffffff;
+      padding: 5px;
+      @include opacity(0.8);
+      @include border-radius(5px);
+      overflow-y: auto;
+    }
+
+    &.introduction {
+      @media only screen and (min-width: 0px) and (max-width: 319px) {
+        background-image: url(image_path('jim/320/IMG_4301.jpg'));
+      }
+      @media only screen and (min-width: 320px) and (max-width: 640px) {
+        background-image: url(image_path('jim/640/IMG_4301.jpg'));
+      }
+      @media only screen and (min-width: 641px) and (max-width: 1023px) {
+        background-image: url(image_path('jim/1024/IMG_4301.jpg'));
+      }
+      @media only screen and (min-width: 1025px) and (max-width: 1280px) {
+        background-image: url(image_path('jim/1280/IMG_4301.jpg'));
+      }
+      @media only screen and (min-width: 1281px) and (max-width: 1366px) {
+        background-image: url(image_path('jim/1366/IMG_4301.jpg'));
+      }
+      @media only screen and (min-width: 1367px) and (max-width: 1441px) {
+        background-image: url(image_path('jim/1440/IMG_4301.jpg'));
+      }
+      @media only screen and (min-width: 1441px) and (max-width: 1920px) {
+        background-image: url(image_path('jim/1920/IMG_4301.jpg'));
+      }
+      @media only screen and (min-width: 1921px) and (max-width: 2560px) {
+        background-image: url(image_path('jim/2560/IMG_4301.jpg'));
+      }
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: right bottom;
+
+      h1 {
+        color: #000;
+      }
+
+      .description {
+        min-height: 210px;
+
+        .highlight-emphasis {
+          text-align: center;
+          color: #468847;
+        }
+      }
+
+    }
+
+    &.open_source {
+      @media only screen and (min-width: 0px) and (max-width: 319px) {
+        background-image: url(image_path('jim/320/IMG_4366.jpg'));
+      }
+      @media only screen and (min-width: 320px) and (max-width: 640px) {
+        background-image: url(image_path('jim/640/IMG_4366.jpg'));
+      }
+      @media only screen and (min-width: 641px) and (max-width: 1023px) {
+        background-image: url(image_path('jim/1024/IMG_4366.jpg'));
+      }
+      @media only screen and (min-width: 1025px) and (max-width: 1280px) {
+        background-image: url(image_path('jim/1280/IMG_4366.jpg'));
+      }
+      @media only screen and (min-width: 1281px) and (max-width: 1366px) {
+        background-image: url(image_path('jim/1366/IMG_4366.jpg'));
+      }
+      @media only screen and (min-width: 1367px) and (max-width: 1441px) {
+        background-image: url(image_path('jim/1440/IMG_4366.jpg'));
+      }
+      @media only screen and (min-width: 1441px) and (max-width: 1920px) {
+        background-image: url(image_path('jim/1920/IMG_4366.jpg'));
+      }
+      @media only screen and (min-width: 1921px) and (max-width: 2560px) {
+        background-image: url(image_path('jim/2560/IMG_4366.jpg'));
+      }
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: left bottom;
+
+      h1 {
+        color: #DD5D00;
+      }
+
+      .description {
+        height: 400px;
+      }
+
+    }
+
+    &.speaking {
+      @media only screen and (min-width: 0px) and (max-width: 319px) {
+        background-image: url(image_path('jim/320/IMG_4395.jpg'));
+      }
+      @media only screen and (min-width: 320px) and (max-width: 640px) {
+        background-image: url(image_path('jim/640/IMG_4395.jpg'));
+      }
+      @media only screen and (min-width: 641px) and (max-width: 1023px) {
+        background-image: url(image_path('jim/1024/IMG_4395.jpg'));
+      }
+      @media only screen and (min-width: 1025px) and (max-width: 1280px) {
+        background-image: url(image_path('jim/1280/IMG_4395.jpg'));
+      }
+      @media only screen and (min-width: 1281px) and (max-width: 1366px) {
+        background-image: url(image_path('jim/1366/IMG_4395.jpg'));
+      }
+      @media only screen and (min-width: 1367px) and (max-width: 1441px) {
+        background-image: url(image_path('jim/1440/IMG_4395.jpg'));
+      }
+      @media only screen and (min-width: 1441px) and (max-width: 1920px) {
+        background-image: url(image_path('jim/1920/IMG_4395.jpg'));
+      }
+      @media only screen and (min-width: 1921px) and (max-width: 2560px) {
+        background-image: url(image_path('jim/2560/IMG_4395.jpg'));
+      }
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: left bottom;
+
+      h1 {
+        color: #000;
+      }
+
+      .description {
+        height: 280px;
+      }
+    }
+
+    &.contact_me {
+      @media only screen and (min-width: 0px) and (max-width: 319px) {
+        background-image: url(image_path('jim/320/IMG_3791.jpg'));
+      }
+      @media only screen and (min-width: 320px) and (max-width: 640px) {
+        background-image: url(image_path('jim/640/IMG_3791.jpg'));
+      }
+      @media only screen and (min-width: 641px) and (max-width: 1023px) {
+        background-image: url(image_path('jim/1024/IMG_3791.jpg'));
+      }
+      @media only screen and (min-width: 1025px) and (max-width: 1280px) {
+        background-image: url(image_path('jim/1280/IMG_3791.jpg'));
+      }
+      @media only screen and (min-width: 1281px) and (max-width: 1366px) {
+        background-image: url(image_path('jim/1366/IMG_3791.jpg'));
+      }
+      @media only screen and (min-width: 1367px) and (max-width: 1441px) {
+        background-image: url(image_path('jim/1440/IMG_3791.jpg'));
+      }
+      @media only screen and (min-width: 1441px) and (max-width: 1920px) {
+        background-image: url(image_path('jim/1920/IMG_3791.jpg'));
+      }
+      @media only screen and (min-width: 1921px) and (max-width: 2560px) {
+        background-image: url(image_path('jim/2560/IMG_3791.jpg'));
+      }
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: left top;
+
+      .coffee {
+        color: #DD5D00;
+      }
+
+      .contact_form {
+        @include border-radius(5px);
+        @include opacity(0.8);
+        background-color: #005580;
+        color: #ffffff;
+        min-height: 250px;
+
+        .form_body{
+          padding: 25px;
+        }
+
+        #contact_name {
+          width: 85%;
+        }
+
+        #contact_email {
+          width: 85%;
+        }
+
+        #contact_body {
+          height: 100px;
+          width: 85%;
+        }
+
+      }
+
+      h1 {
+        color: #DD5D00;
+      }
+    }
+  }
+}
+

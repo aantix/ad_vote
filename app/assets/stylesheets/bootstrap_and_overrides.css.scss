@@ -1,0 +1,41 @@
+// https://github.com/thomas-mcdonald/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/_variables.scss
+
+//$baseFontSize:          17px;
+//$baseFontFamily:        'Crete Round', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+//$baseLineHeight:        20px;
+//$altFontFamily:         'Open Sans Condensed', Georgia, "Times New Roman", Times, serif !default;
+//
+//$headingsFontFamily:    'Alfa Slab One'; // empty to use BS default, @baseFontFamily
+//$headingsFontWeight:    normal;    // instead of browser default, bold
+
+
+$headingsColor:         #DD5D00 !default;
+
+//$linkColor:             #FFF !default;
+$linkColor:             #08c !default;
+$linkColorHover:        darken($linkColor, 15%) !default;
+
+// Navigation tweaking...
+//$navbarBackground:      #08c !default;
+//$navbarText: #FFF !default;
+//$navbarLinkColor:                 #fff !default;
+
+@import "bootstrap";
+
+body { padding-top: 60px; background-image: url(image_path('lyonnette_@2X.png')); }
+
+@import "bootstrap-responsive";
+
+//.container {
+//  margin-right: auto;
+//  margin-left: auto;
+//  width: 1024px; /* or 950px */
+//}
+
+
+// More navigation tweaking...
+//@import "compass/css3/opacity";
+//.navbar {
+//  @include opacity(0.8);
+//}
+
