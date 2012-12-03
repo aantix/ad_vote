@@ -1,0 +1,37 @@
+<p id="notice">
+  <%= notice %>
+</p>
+
+<h1>
+  <b>Headline:</b>
+  <%= @ad.headline %>
+  <span>
+    &nbsp;(<%= @ad.status %>)
+  </span>
+</h1>
+
+<h2 class="muted">
+  <b>Query:</b>
+  <%= @ad.study.query %>
+</h2>
+
+<table width="100%" class="table table-striped">
+  <thead>
+      <tr>
+        <th>Ad Headline</th>
+        <th>Clicks</th>
+      </tr>
+  </thead>
+
+  <tbody>
+  <% @ad.study.top_ads.each do |ad| %>
+      <% c = ad == @ad ? 'success' : '' %>
+      <tr class="<%= c %>">
+        <td><%= ad.headline %></td>
+        <td><%= ad.votes.count %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Studies', studies_path %>

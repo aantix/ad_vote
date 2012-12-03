@@ -22,6 +22,7 @@ class StudiesController < ApplicationController
       @study.import_competing_ads
       @study.import_ad_file
       @study.import_search_results
+      @study.create_turk_tasks
 
       redirect_to @study, notice: 'Study was successfully created.'
     else

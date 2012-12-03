@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121203053418) do
+ActiveRecord::Schema.define(:version => 20121203071500) do
 
   create_table "ads", :force => true do |t|
     t.integer  "study_id"
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(:version => 20121203053418) do
   add_index "turkee_imported_assignments", ["turkee_task_id"], :name => "index_turkee_imported_assignments_on_turkee_task_id"
 
   create_table "turkee_tasks", :force => true do |t|
+    t.integer  "ad_id"
     t.string   "hit_url"
     t.boolean  "sandbox"
     t.string   "task_type"

@@ -1,6 +1,7 @@
 Promotion::Application.routes.draw do
   resources :votes
 
+  resources :ads, :only => [:show]
 
   resources :studies
 

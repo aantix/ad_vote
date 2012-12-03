@@ -13,6 +13,7 @@ gem 'randumb'
 gem 'fuubar'
 gem 'carrierwave'
 gem 'google-search'
+gem 'will_paginate'
 
 group :assets do
   gem 'coffee-rails', '~> 3.2.1'

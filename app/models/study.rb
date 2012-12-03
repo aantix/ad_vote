@@ -1,15 +1,16 @@
 require "csv"
 
 class Study < ActiveRecord::Base
-  validates :name, :presence => {:message => " cannot be blankx"}
-  validates :query, :presence => {:message => " cannot be blanky"}
-  validates :ad_file, :presence => {:message => " cannot be blankz"}
+  validates :name, :presence => {:message => " cannot be blank"}
+  validates :query, :presence => {:message => " cannot be blank"}
+  validates :ad_file, :presence => {:message => " cannot be blank"}
 
   attr_accessible :name, :query, :ad_file
 
   belongs_to :user
-  has_many :ads
-  has_many :google_search_results
+  has_many :ads, :dependent => :destroy
+  has_many :google_search_results, :dependent => :destroy
+  has_many :votes, :dependent => :destroy
 
   mount_uploader :ad_file, AdFileUploader
 
@@ -17,6 +18,18 @@ class Study < ActiveRecord::Base
 
   def self.human_attribute_name(attr, options = {})
      ATTR_NAMES[attr.to_sym] || super(attr)
+  end
+
+  def user_ads
+    ads.where(:user_created => true)
+  end
+
+  def competitor_ads
+    ads.where(:user_created => false)
+  end
+
+  def top_ads
+    ads
   end
 
   def import_competing_ads
@@ -47,5 +60,15 @@ class Study < ActiveRecord::Base
                                     :title        => result.title)
     end
   end
+
+  def create_turk_tasks
+    user_ads.each {|ad| ad.create_turk_study(query) }
+  end
+
+  def insert_user_ad(user_ad)
+    index = rand(3)
+    ads.insert(index, user_ad)
+  end
+
 
 end

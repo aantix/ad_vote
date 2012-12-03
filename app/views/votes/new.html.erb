@@ -1,25 +1,56 @@
-<div id="error_explanation" class="alert alert-error">
-  Which result would you click on if you did a search for <b><%= @study.query %></b>
-</div>
-
-<div class="row">
-  <div class="span10">
-    <%= @study.google_search_results.each do |result| %>
-      <div class="search_result">
-         <%= link_to result.title, result.redirect_url %><br/>
-         <%= result.display_url %><br/>
-         <%= result.description %>
+<div class="votes">
+  <div class="row">
+    <div class="span8">
+      <div id="error_explanation" class="alert alert-error">
+        Which link would you click on if you did a search for <b>'<%= @study.query %>'</b>?
       </div>
-    <% end %>
+    </div>
   </div>
-  <div class="span2">
-    <%= @study.ads.each do |ad| %>
-        <div class="ad">
-           <%= link_to ad.headline, ad.display_url %><br/>
-           <%= ad.display_url %><br/>
-           <%= ad.description1 %><br/>
-           <%= ad.description2 %>
-        </div>
-    <% end %>
+
+  <div class="row">
+    <div class="span6">
+      <%= @study.google_search_results.each do |result| %>
+          <%= turkee_form_for(@vote, params) do |f| %>
+            <%= f.hidden_field :vote_type, :value => 'GoogleSearchResult' %>
+            <%= f.hidden_field :vote_id, :value => result.id %>
+            <%= f.hidden_field :study_id, :value => @study.id %>
+
+            <div class="search_result">
+              <%= link_to result.title.html_safe, result.redirect_url, :class => 'result_link', :disabled => @disabled %>
+              <br/>
+              <span class="display_url">
+                <%= result.display_url.html_safe %>
+              </span>
+              <br/>
+              <%= result.description.html_safe %>
+            </div>
+          <% end %>
+      <% end %>
+    </div>
+    <div class="span2">
+      <%= @study.ads.each do |ad| %>
+          <%= turkee_form_for(@vote, params) do |f| %>
+
+            <%= f.hidden_field :vote_type, :value => 'Ad' %>
+            <%= f.hidden_field :vote_id, :value => ad.id %>
+            <%= f.hidden_field :study_id, :value => @study.id %>
+
+            <div class="ad">
+              <%= link_to ad.headline.html_safe, ad.display_url, :class => 'result_link', :disabled => @disabled %>
+              <br/>
+              <span class="display_url">
+                <%= ad.display_url.html_safe %>
+              </span>
+              <br/>
+              <%= ad.description1.html_safe %>
+              <br/>
+              <%= ad.description2.html_safe %>
+            </div>
+          <% end %>
+      <% end %>
+    </div>
+    <div class="span4">
+      &nbsp;
+    </div>
   </div>
 </div>

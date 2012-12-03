@@ -1,20 +1,41 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>User:</b>
-  <%= @study.user_id %>
+<p id="notice">
+  <%= notice %>
 </p>
 
-<p>
+<h1>
   <b>Name:</b>
   <%= @study.name %>
-</p>
+</h1>
 
-<p>
+<h2 class="muted">
   <b>Query:</b>
   <%= @study.query %>
-</p>
+</h2>
 
+<table width="100%" class="table table-striped">
+  <thead>
+      <tr>
+        <th>Ad Headline</th>
+        <th>Ad Clicks</th>
+        <th>Total Clicks</th>
+        <th>&nbsp;</th>
+      </tr>
+  </thead>
 
-<%= link_to 'Edit', edit_study_path(@study) %> |
-<%= link_to 'Back', studies_path %>
+  <tbody>
+  <% @study.user_ads.each do |ad| %>
+      <tr>
+        <td><%= link_to ad.headline, ad %></td>
+        <td><%= ad.votes.count %></td>
+        <td><%= ad.study.votes.count %></td>
+        <td>
+          <span>
+            <%= ad.status %>
+          </span>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Studies', studies_path %>
