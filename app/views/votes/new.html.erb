@@ -1,0 +1,25 @@
+<div id="error_explanation" class="alert alert-error">
+  Which result would you click on if you did a search for <b><%= @study.query %></b>
+</div>
+
+<div class="row">
+  <div class="span10">
+    <%= @study.google_search_results.each do |result| %>
+      <div class="search_result">
+         <%= link_to result.title, result.redirect_url %><br/>
+         <%= result.display_url %><br/>
+         <%= result.description %>
+      </div>
+    <% end %>
+  </div>
+  <div class="span2">
+    <%= @study.ads.each do |ad| %>
+        <div class="ad">
+           <%= link_to ad.headline, ad.display_url %><br/>
+           <%= ad.display_url %><br/>
+           <%= ad.description1 %><br/>
+           <%= ad.description2 %>
+        </div>
+    <% end %>
+  </div>
+</div>

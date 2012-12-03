@@ -1,8 +1,6 @@
-<%= form_for(@study) do |f| %>
+<%= form_for(@study, :html => {:class => 'form-horizontal'}) do |f| %>
   <% if @study.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@study.errors.count, "error") %> prohibited this study from being saved:</h2>
-
+    <div id="error_explanation" class="alert alert-error">
       <ul>
       <% @study.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -11,19 +9,43 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+  <div class="control-group">
+    <%= f.label :query, 'Search Terms', :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :query %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :query %><br />
-    <%= f.text_field :query %>
+  <div class="control-group">
+    <%= f.label :csv, 'Test Ads (.csv)', :class => 'control-label' %>
+
+    <div class="controls">
+        <span class="fileupload fileupload-new" data-provides="fileupload">
+          <div class="input-append">
+            <div class="uneditable-input">
+              <i class="icon-file fileupload-exists"></i>
+              <span class="fileupload-preview"></span>
+            </div>
+            <span class="btn btn-file">
+              <span class="fileupload-new">Select file</span>
+              <span class="fileupload-exists">Change</span>
+              <%= f.file_field :ad_file %>
+             </span>
+             <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+          </div>
+        </span>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="control-group">
+    <div class="controls">
+      <%= f.submit(:class => 'btn btn-primary') %>
+    </div>
   </div>
+
 <% end %>

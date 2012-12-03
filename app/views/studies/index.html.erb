@@ -3,14 +3,16 @@
 <div class="studies">
 
   <table width="100%" class="table table-striped">
-    <tr>
-      <th>Name</th>
-      <th>Query</th>
-      <th>Actions</th>
-      <th width="*" align="center" class="new_study">
-        <%= link_to 'New Study', new_study_path, :class => 'btn btn-primary' %>
-      </th>
-    </tr>
+    <thead>
+        <tr>
+          <th>Name</th>
+          <th>Query</th>
+          <th>Actions</th>
+          <th width="*" align="center" class="new_study">
+            <%= link_to 'New Study', new_study_path, :class => 'btn btn-primary' %>
+          </th>
+        </tr>
+    </thead>
 
     <tbody>
     <% @studies.each do |study| %>

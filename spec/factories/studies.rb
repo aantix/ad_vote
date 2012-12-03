@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :study do
-    user_id 1
     name "MyString"
     query "MyString"
+    ad_file File.open("#{Rails.root}/data/cats.csv")
   end
 end

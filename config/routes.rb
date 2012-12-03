@@ -1,4 +1,7 @@
 Promotion::Application.routes.draw do
+  resources :votes
+
+
   resources :studies
 
   resources :contacts

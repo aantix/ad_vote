@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121130074150) do
+ActiveRecord::Schema.define(:version => 20121203053418) do
+
+  create_table "ads", :force => true do |t|
+    t.integer  "study_id"
+    t.string   "headline"
+    t.string   "description1"
+    t.string   "description2"
+    t.string   "display_url"
+    t.string   "redirect_url"
+    t.boolean  "user_created", :default => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+  end
 
   create_table "contacts", :force => true do |t|
     t.string   "name"
@@ -19,6 +31,16 @@ ActiveRecord::Schema.define(:version => 20121130074150) do
     t.text     "body"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "google_search_results", :force => true do |t|
+    t.integer  "study_id"
+    t.string   "title"
+    t.string   "display_url"
+    t.string   "redirect_url"
+    t.text     "description"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "roles", :force => true do |t|
@@ -36,8 +58,40 @@ ActiveRecord::Schema.define(:version => 20121130074150) do
     t.integer  "user_id"
     t.string   "name"
     t.string   "query"
+    t.string   "ad_file"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "turkee_imported_assignments", :force => true do |t|
+    t.string   "assignment_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.integer  "turkee_task_id"
+    t.string   "worker_id"
+    t.integer  "result_id"
+  end
+
+  add_index "turkee_imported_assignments", ["assignment_id"], :name => "index_turkee_imported_assignments_on_assignment_id", :unique => true
+  add_index "turkee_imported_assignments", ["turkee_task_id"], :name => "index_turkee_imported_assignments_on_turkee_task_id"
+
+  create_table "turkee_tasks", :force => true do |t|
+    t.string   "hit_url"
+    t.boolean  "sandbox"
+    t.string   "task_type"
+    t.text     "hit_title"
+    t.text     "hit_description"
+    t.string   "hit_id"
+    t.decimal  "hit_reward",            :precision => 10, :scale => 2
+    t.integer  "hit_num_assignments"
+    t.integer  "hit_lifetime"
+    t.string   "form_url"
+    t.integer  "completed_assignments",                                :default => 0
+    t.boolean  "complete"
+    t.datetime "created_at",                                                          :null => false
+    t.datetime "updated_at",                                                          :null => false
+    t.integer  "hit_duration"
+    t.integer  "expired"
   end
 
   create_table "users", :force => true do |t|
@@ -65,5 +119,13 @@ ActiveRecord::Schema.define(:version => 20121130074150) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], :name => "index_users_roles_on_user_id_and_role_id"
+
+  create_table "votes", :force => true do |t|
+    t.integer  "study_id"
+    t.string   "vote_type"
+    t.integer  "vote_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
 end
