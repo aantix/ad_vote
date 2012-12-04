@@ -20,6 +20,14 @@ class Study < ActiveRecord::Base
      ATTR_NAMES[attr.to_sym] || super(attr)
   end
 
+  def display_ads
+    ads.limit(8)
+  end
+
+  def display_search_results
+    google_search_results.limit(25)
+  end
+
   def user_ads
     ads.where(:user_created => true)
   end
@@ -65,10 +73,9 @@ class Study < ActiveRecord::Base
     user_ads.each {|ad| ad.create_turk_study(query) }
   end
 
-  def insert_user_ad(user_ad)
+  def insert_user_ad(display_ads, user_ad)
     index = rand(3)
-    ads.insert(index, user_ad)
+    display_ads.insert(index, user_ad)
   end
-
 
 end

@@ -5,4 +5,20 @@
       vertical-align: middle;
     }
   }
+
+  .mini-dashboard {
+    color: #ffffff;
+    background-color: #2E73A1;
+    text-align: center;
+
+    .stats-table {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .stats {
+      background-color: #2E73A1;
+      text-align: center;
+    }
+  }
 }

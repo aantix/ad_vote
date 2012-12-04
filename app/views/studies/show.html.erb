@@ -2,40 +2,68 @@
   <%= notice %>
 </p>
 
-<h1>
-  <b>Name:</b>
-  <%= @study.name %>
-</h1>
+<div class="studies">
+    <div class="row-fluid">
+      <div class="span8">
+        <h3>
+          <b>Name:</b>
+          <%= @study.name %>
+        </h3>
+      </div>
+      <div class="span4 mini-dashboard">
+        <table width="100px"  class="table stats-table">
+          <tbody>
+          <tr>
+            <td colspan="2" class="stats">Stats</td>
+          </tr>
+          <tr>
+            <td>
+              <b>Query</b>
+            </td>
+            <td>
+              <%= @study.query %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <b>Total Clicks</b>
+            </td>
+            <td>
+              <%= @study.votes.count  %>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-<h2 class="muted">
-  <b>Query:</b>
-  <%= @study.query %>
-</h2>
 
-<table width="100%" class="table table-striped">
-  <thead>
+    <table width="100%" class="table table-striped">
+      <thead>
       <tr>
         <th>Ad Headline</th>
         <th>Ad Clicks</th>
-        <th>Total Clicks</th>
         <th>&nbsp;</th>
       </tr>
-  </thead>
+      </thead>
 
-  <tbody>
-  <% @study.user_ads.each do |ad| %>
-      <tr>
-        <td><%= link_to ad.headline, ad %></td>
-        <td><%= ad.votes.count %></td>
-        <td><%= ad.study.votes.count %></td>
-        <td>
-          <span>
-            <%= ad.status %>
-          </span>
-        </td>
-      </tr>
-  <% end %>
-  </tbody>
-</table>
+      <tbody>
+      <% @study.user_ads.each do |ad| %>
+          <tr>
+            <td><%= link_to ad.headline, ad %></td>
+            <td><%= ad.votes.count %></td>
+            <td>
+              <span>
+                <%= link_to ad.status, ad.turkee_tasks.first.hit_url, :target => "_blank" %>
+              </span>
 
-<%= link_to 'Studies', studies_path %>
+            </td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+</div>
+
+
+
+<%= link_to '&laquo; Studies'.html_safe, studies_path %>

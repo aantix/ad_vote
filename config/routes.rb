@@ -3,7 +3,11 @@ Promotion::Application.routes.draw do
 
   resources :ads, :only => [:show]
 
-  resources :studies
+  resources :studies do
+    collection do
+      put :refresh
+    end
+  end
 
   resources :contacts
 
@@ -11,6 +15,10 @@ Promotion::Application.routes.draw do
     root :to => 'studies#index'
   end
   root :to => "studies#index"
+  devise_for :users, :path => "auth", :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'sign_up' }
   devise_for :users
+  devise_scope :user do
+    get "sign_in", :to => "devise/sessions#new"
+  end
   resources :users, :only => [:show, :index]
 end

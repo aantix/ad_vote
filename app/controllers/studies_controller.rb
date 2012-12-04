@@ -1,4 +1,10 @@
 class StudiesController < ApplicationController
+  skip_before_filter :authenticate_user!, :only => [:refresh]
+
+  def refresh
+    Turkee::TurkeeTask.process_hits
+  end
+
   def index
     @studies = current_user.studies
   end

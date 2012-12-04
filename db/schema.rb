@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121203071500) do
+ActiveRecord::Schema.define(:version => 20121204033254) do
 
   create_table "ads", :force => true do |t|
     t.integer  "study_id"
@@ -59,8 +59,18 @@ ActiveRecord::Schema.define(:version => 20121203071500) do
     t.string   "name"
     t.string   "query"
     t.string   "ad_file"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+    t.integer  "votes_count", :default => 0
+  end
+
+  create_table "study_samples", :force => true do |t|
+    t.integer  "study_id"
+    t.integer  "ad_id"
+    t.string   "first_verify"
+    t.string   "second_verify"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "turkee_imported_assignments", :force => true do |t|

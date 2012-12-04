@@ -7,6 +7,7 @@ class Ad < ActiveRecord::Base
   NUM_ASSIGNMENTS = 20
 
   belongs_to :study
+
   attr_accessible :headline, :user_created, :description1, :description2, :display_url, :headline, :redirect_url
 
   has_many :votes, :as => :vote
@@ -14,9 +15,11 @@ class Ad < ActiveRecord::Base
   has_many :turkee_tasks, :class_name => Turkee::TurkeeTask, :foreign_key => 'ad_id', :dependent => :destroy
 
   def create_turk_study(query)
-    params = {:ad_id => self.id, :study_id => self.study.id}
-    turkee_task = Turkee::TurkeeTask.create_hit(TURKEE_URL, turk_title(query), turk_description(query), "Vote",
-                                                NUM_ASSIGNMENTS, PRICE, LIFETIME, DURATION, {}, params)
+    study_sample = StudySample.create!(:ad_id => self.id, :study_id => self.study.id)
+    turkee_task  = Turkee::TurkeeTask.create_hit(TURKEE_URL, turk_title(query),
+                                                 turk_description(query), "Vote",
+                                                 NUM_ASSIGNMENTS, PRICE, LIFETIME, DURATION,
+                                                 {}, {:study_sample_id => study_sample.id})
 
     turkee_task.ad_id = self.id
     turkee_task.save!

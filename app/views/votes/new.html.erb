@@ -9,14 +9,14 @@
 
   <div class="row">
     <div class="span6">
-      <%= @study.google_search_results.each do |result| %>
+      <% @search_results.each do |result| %>
           <%= turkee_form_for(@vote, params) do |f| %>
             <%= f.hidden_field :vote_type, :value => 'GoogleSearchResult' %>
             <%= f.hidden_field :vote_id, :value => result.id %>
             <%= f.hidden_field :study_id, :value => @study.id %>
 
             <div class="search_result">
-              <%= link_to result.title.html_safe, result.redirect_url, :class => 'result_link', :disabled => @disabled %>
+              <%= link_to result.title.html_safe, '#', :class => 'result_link', :disabled => @disabled %>
               <br/>
               <span class="display_url">
                 <%= result.display_url.html_safe %>
@@ -28,15 +28,15 @@
       <% end %>
     </div>
     <div class="span2">
-      <%= @study.ads.each do |ad| %>
+      <% @ads.each do |ad| %>
           <%= turkee_form_for(@vote, params) do |f| %>
 
             <%= f.hidden_field :vote_type, :value => 'Ad' %>
             <%= f.hidden_field :vote_id, :value => ad.id %>
             <%= f.hidden_field :study_id, :value => @study.id %>
 
-            <div class="ad">
-              <%= link_to ad.headline.html_safe, ad.display_url, :class => 'result_link', :disabled => @disabled %>
+            <div class="ad <%= "highlight" if ad.id == @user_ad.id %>">
+              <%= link_to ad.headline.html_safe, '#', :class => 'result_link', :disabled => @disabled %>
               <br/>
               <span class="display_url">
                 <%= ad.display_url.html_safe %>
