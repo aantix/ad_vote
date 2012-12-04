@@ -3,10 +3,10 @@ gem 'rails', '3.2.9'
 gem 'pg'
 gem 'compass-rails'
 gem 'sass-rails'
-gem 'mysql2'
+gem 'mysql2', :group => [:development, :test]
 
-gem 'adwords_scraper', :git => 'git@github.com:aantix/adwords_scraper.git'
-gem 'turkee', :git => 'git@github.com:aantix/turkee.git'
+gem 'adwords_scraper', :git => 'https://github.com/aantix/adwords_scraper.git'
+gem 'turkee', :git => 'https://github.com/aantix/turkee.git'
 
 gem 'spork', '~> 1.0rc'
 gem 'randumb'

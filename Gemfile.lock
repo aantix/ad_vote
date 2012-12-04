@@ -1,12 +1,12 @@
 GIT
-  remote: git@github.com:aantix/adwords_scraper.git
+  remote: https://github.com/aantix/adwords_scraper.git
   revision: 393e674bc191a8f00fef12d7f001339e4742f7da
   specs:
     adwords_scraper (0.0.1)
       mechanize
 
 GIT
-  remote: git@github.com:aantix/turkee.git
+  remote: https://github.com/aantix/turkee.git
   revision: 8d523e8cc9981bb80d8bf0474b06c75b238aafcc
   specs:
     turkee (1.2.1)
