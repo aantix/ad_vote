@@ -5,7 +5,7 @@ Promotion::Application.routes.draw do
 
   resources :studies do
     collection do
-      put :refresh
+      get :refresh
     end
   end
 

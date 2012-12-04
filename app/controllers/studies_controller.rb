@@ -3,6 +3,9 @@ class StudiesController < ApplicationController
 
   def refresh
     Turkee::TurkeeTask.process_hits
+    flash[:success] = "HITs data imported."
+
+    redirect_to studies_path
   end
 
   def index
