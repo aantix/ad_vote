@@ -9,14 +9,14 @@
       <table width="100px"  class="table stats-table">
         <tbody>
         <tr>
-          <td colspan="2" class="stats">Account</td>
+          <td colspan="2" class="stats">Account Info</td>
         </tr>
         <tr>
           <td>
             <b>Mechanical Turk Balance</b>
           </td>
           <td>
-            <%= RTurk.GetAccountBalance.amount %>
+            <%= "#{number_to_currency(RTurk.GetAccountBalance.amount)}" %>
           </td>
         </tr>
         </tbody>
@@ -31,7 +31,7 @@
           <th>Query</th>
           <th>Actions</th>
           <th width="*" align="center" class="new_study">
-            <%= link_to 'New Study', new_study_path, :class => 'btn btn-primary' %>
+            <%= link_to 'New Study', new_study_path, :class => 'btn btn-success' %>
           </th>
         </tr>
     </thead>
