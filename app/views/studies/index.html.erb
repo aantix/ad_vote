@@ -1,6 +1,28 @@
-<h1>Studies</h1>
-
 <div class="studies">
+  <div class="row-fluid">
+    <div class="span8">
+      <h3>
+        Studies
+      </h3>
+    </div>
+    <div class="span4 mini-dashboard">
+      <table width="100px"  class="table stats-table">
+        <tbody>
+        <tr>
+          <td colspan="2" class="stats">Account</td>
+        </tr>
+        <tr>
+          <td>
+            <b>Mechanical Turk Balance</b>
+          </td>
+          <td>
+            <%= RTurk.GetAccountBalance.amount %>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
   <table width="100%" class="table table-striped">
     <thead>
