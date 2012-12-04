@@ -1,4 +1,6 @@
 class VotesController < ApplicationController
+  skip_before_filter :authenticate_user!, :only => [:new]
+
   def new
     raise "Must supply a study sample id" if params[:study_sample_id].nil?
 
