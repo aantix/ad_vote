@@ -9,22 +9,26 @@
 //$headingsFontWeight:    normal;    // instead of browser default, bold
 
 
-$headingsColor:         #DD5D00 !default;
+////$headingsColor:         #DD5D00 !default;
 
 //$linkColor:             #FFF !default;
-$linkColor:             #08c !default;
-$linkColorHover:        darken($linkColor, 15%) !default;
+////$linkColor:             #08c !default;
+////$linkColorHover:        darken($linkColor, 15%) !default;
 
 // Navigation tweaking...
 //$navbarBackground:      #08c !default;
 //$navbarText: #FFF !default;
 //$navbarLinkColor:                 #fff !default;
 
+@import "bootswatch/cosmo/variables";
+
 @import "bootstrap";
 
 body { padding-top: 60px; }
 
 @import "bootstrap-responsive";
+
+@import "bootswatch/cosmo/bootswatch";
 
 //.container {
 //  margin-right: auto;

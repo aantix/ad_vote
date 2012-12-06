@@ -14,6 +14,7 @@ gem 'fuubar'
 gem 'carrierwave'
 gem 'google-search'
 gem 'will_paginate'
+gem 'bootswatch-rails', :git => "https://github.com/aantix/bootswatch-rails.git"
 
 group :assets do
   gem 'coffee-rails', '~> 3.2.1'

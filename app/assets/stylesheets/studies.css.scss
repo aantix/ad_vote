@@ -1,4 +1,10 @@
+@import "bootswatch/cosmo/variables";
+
 .studies {
+  .table th, .table td {
+    border-top: 0px;
+  }
+
   th {
     &.new_study {
       text-align: right;
@@ -7,8 +13,8 @@
   }
 
   .mini-dashboard {
-    color: #ffffff;
-    background-color: #2E73A1;
+    background-color: $infoBackground;
+    color: $infoText;
     text-align: center;
 
     .stats-table {
@@ -17,7 +23,6 @@
     }
 
     .stats {
-      background-color: #2E73A1;
       text-align: center;
     }
   }

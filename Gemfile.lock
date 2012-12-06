@@ -6,6 +6,13 @@ GIT
       mechanize
 
 GIT
+  remote: https://github.com/aantix/bootswatch-rails.git
+  revision: cc06ce0a43ab474120bdfa994ae91d36b52c576d
+  specs:
+    bootswatch-rails (0.1.0)
+      railties (>= 3.1)
+
+GIT
   remote: https://github.com/aantix/turkee.git
   revision: 8d523e8cc9981bb80d8bf0474b06c75b238aafcc
   specs:
@@ -255,6 +262,7 @@ DEPENDENCIES
   adwords_scraper!
   awesome_print
   bootstrap-sass
+  bootswatch-rails!
   cancan (>= 1.6.8)
   capybara (>= 1.1.2)
   carrierwave
