@@ -6,17 +6,10 @@ GIT
       mechanize
 
 GIT
-  remote: https://github.com/aantix/bootswatch-rails.git
-  revision: cc06ce0a43ab474120bdfa994ae91d36b52c576d
-  specs:
-    bootswatch-rails (0.1.0)
-      railties (>= 3.1)
-
-GIT
   remote: https://github.com/aantix/turkee.git
-  revision: 8d523e8cc9981bb80d8bf0474b06c75b238aafcc
+  revision: 57d532d4ca26ff52b51a7ace627745199afef3c2
   specs:
-    turkee (1.2.1)
+    turkee (1.2.2)
       lockfile
       rails (>= 3.1.1)
       rturk (>= 2.4.0)
@@ -57,6 +50,8 @@ GEM
     bcrypt-ruby (3.0.1)
     bootstrap-sass (2.2.1.1)
       sass (~> 3.2)
+    bootswatch-rails (0.4.0)
+      railties (>= 3.1)
     builder (3.0.4)
     cancan (1.6.8)
     capybara (2.0.1)
@@ -210,7 +205,7 @@ GEM
       rspec-core (~> 2.12.0)
       rspec-expectations (~> 2.12.0)
       rspec-mocks (~> 2.12.0)
-    rturk (2.9.0)
+    rturk (2.10.2)
       nokogiri (>= 1.4.1)
       rest-client (>= 1.4.0)
     ruby-progressbar (1.0.2)
@@ -262,7 +257,7 @@ DEPENDENCIES
   adwords_scraper!
   awesome_print
   bootstrap-sass
-  bootswatch-rails!
+  bootswatch-rails
   cancan (>= 1.6.8)
   capybara (>= 1.1.2)
   carrierwave

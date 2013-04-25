@@ -16,7 +16,8 @@ class Ad < ActiveRecord::Base
 
   def create_turk_study(query)
     study_sample = StudySample.create!(:ad_id => self.id, :study_id => self.study.id)
-    turkee_task  = Turkee::TurkeeTask.create_hit(TURKEE_URL, turk_title(query),
+    turkee_task  = Turkee::TurkeeTask.create_hit(TURKEE_URL,
+                                                 turk_title(query),
                                                  turk_description(query), "Vote",
                                                  NUM_ASSIGNMENTS, PRICE, LIFETIME, DURATION,
                                                  {}, {:study_sample_id => study_sample.id})

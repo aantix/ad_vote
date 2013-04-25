@@ -7,6 +7,7 @@ gem 'mysql2', :group => [:development, :test]
 
 gem 'adwords_scraper', :git => 'https://github.com/aantix/adwords_scraper.git'
 gem 'turkee', :git => 'https://github.com/aantix/turkee.git'
+#gem 'turkee', :path => '../turkee'
 
 gem 'spork', '~> 1.0rc'
 gem 'randumb'
@@ -14,7 +15,8 @@ gem 'fuubar'
 gem 'carrierwave'
 gem 'google-search'
 gem 'will_paginate'
-gem 'bootswatch-rails', :git => "https://github.com/aantix/bootswatch-rails.git"
+gem 'bootswatch-rails'
+#gem 'bootswatch-rails', :path => "../bootswatch-rails"
 
 group :assets do
   gem 'coffee-rails', '~> 3.2.1'

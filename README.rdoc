@@ -1,0 +1,43 @@
+== Description
+
+Test your Google Adword campaigns cheaply.  Say you're trying to target the expensive keywords 'mortgage refinance'.
+You could write some ads, put them up in your adword campaign, and hope for the best.
+
+Or you could utilize Mechanical Turk.  You could download all of your competitors ads for 'mortgage refinance', download
+all of the search results for 'mortgage refinance', mix in your ads alongside competitors, and for 5-10 cents,
+ have Turkers vote on which result/ad they find most appealing.
+
+Five cents a click certainly beats $50 a click.
+
+== Create a Study
+
+You setup a "study" where you define the search term(s) that you wish to test your personal ad
+revisions against.   Your personal ad revisions are uploaded via a .csv file.
+You can view some sample Ad campaigns in the data/ directory.
+
+Here's the study creation screen :
+http://i.imgur.com/qo3Cwlv.png
+
+== Mechanical Turk Task
+
+Once you've created your study, the organic search results and competing ads are downloaded for your search terms.  Then, a series of tasks are created on Mechanical Turk asking the worker which result they would click if they had performed this search.
+Your personal ad revisions are mixed in alongside the competing ads and organic search results.
+
+Here's a sample of the interface the worker sees if our study was for the query "grass fed beef" :
+http://i.imgur.com/l1ObmPZh.png
+
+== Your Ad Results for your Study
+
+You can view your study and your ad results simply clicking on the study from the main page:
+http://i.imgur.com/4uVTBNe.png
+
+== All Ad Results for the Study
+
+You can view the performance of the study; clicks for organic search results, competitor ads, and your ads as well :
+http://i.imgur.com/xURLWxe.png
+
+== Notes
+
+If an organic search result gets the highest number of clicks (which they generally do), maybe there are keywords or phrases from that page that you could be utilizing in your campaign?
+
+
