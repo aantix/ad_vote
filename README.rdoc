@@ -9,6 +9,10 @@ have Turkers vote on which result/ad they find most appealing.
 
 Five cents a click certainly beats $50 a click.
 
+== First Things First
+
+Open up turkee.rb and add your AWS keys.
+
 == Create a Study
 
 You setup a "study" where you define the search term(s) that you wish to test your personal ad
